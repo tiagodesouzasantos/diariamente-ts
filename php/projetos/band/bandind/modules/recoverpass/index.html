@@ -1,0 +1,41 @@
+<section id="recover-pass" ng-init="init()" flex="100" layout="row" layout-align="center center">
+<div class="login-field-set" flex="100" layout="row" layout-align="center center" layout-wrap>
+        <md-card flex-xs="90" flex-gt-xs="50" flex-gt-sm="40" flex-gt-md="30">
+        <md-toolbar>
+            <div class="md-toolbar-tools" layout="row">
+                <h2>
+                    <span>Recuperar senha</span>
+                </h2>
+            </div>
+        </md-toolbar>
+        <md-card-content>
+            <form name="recoverPass">                
+                <md-input-container class="md-block">
+                    <label>Senha</label>
+                    <input maxlength="20" type="password" name="senha" ng-model="login.senha" placeholder="Digite sua senha" title="Digite sua senha" required
+                        md-maxlength="20" />
+                    <div ng-messages="recoverPass.senha.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Insira sua senha!</div>
+                    </div>
+                </md-input-container>                
+                <md-input-container class="md-block">
+                    <label>Repetir senha</label>
+                    <input maxlength="20" type="password" name="rsenha" ng-model="login.rsenha" placeholder="Digite sua senha novamente" title="Digite sua senha novamente" required
+                        md-maxlength="20" />
+                    <div ng-messages="recoverPass.rsenha.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Insira sua senha novamente!</div>
+                    </div>
+                </md-input-container>     
+                <div layout="column" flex="100" layout-align="start center">
+                    <div layout="row" layout-align="end center" flex="50">
+                        <md-button ng-disabled="!recoverPass.$valid || !(login.senha==login.rsenha)" ng-click="updatePass()" class="md-raised md-primary">                    
+                            <p ng-show="!progress"> &nbsp Atualizar senha &nbsp</p>
+                            <md-progress-circular ng-show="progress" class="md-hue-2 loading-btn" md-diameter="20px"></md-progress-circular>
+                        </md-button>
+                    </div>                                       
+                </div>
+            </form>
+        </md-card-content>
+    </md-card>
+</div>
+</section>

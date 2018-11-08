@@ -1,0 +1,11 @@
+<section id="admin" ng-init="init()">
+        <md-content layout="row" flex="100" layout-wrap>
+        <div flex="50" layout="row" layout-align="start start" layout-wrap>
+            <p flex="50" layout="row" layout-align="start center">Treinamentos entre datas.</p>
+            <div flex="60" layout="row" layout-align="start center" layout-wrap>
+                <md-datepicker ng-model="treinaRange.inicial" md-max-date="maxDate" md-placeholder="Enter date"></md-datepicker>
+                <md-datepicker ng-model="treinaRange.final" md-max-date="maxDate" md-placeholder="Enter date"></md-datepicker>
+            </div>
+        </div>
+        </md-content>
+</section>

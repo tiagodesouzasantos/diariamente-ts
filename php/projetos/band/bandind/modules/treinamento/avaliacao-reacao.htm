@@ -1,0 +1,43 @@
+<md-content id="avaliacao-reacao"
+            class="md-padding" 
+            layout="row" flex="100" layout-wrap>
+    <form name="avaliacaoReacao" div layout="row" flex="100" layout-wrap>
+        <div layout="row" flex="100" layout-wrap>
+            <p class="title" flex="100">Em sua opinião:</p>
+            <div flex="50" flex-xs="100">
+                <md-input-container class="md-block">
+                    <label>O que precisa ser melhorado?</label>
+                    <textarea ng-model="opiniaoDisserta.melhorar" required minlength="10" maxlength="250" md-maxlength="250" rows="1" md-select-on-focus></textarea>
+                </md-input-container>
+            </div>
+            <div flex="50" flex-xs="100">
+                <md-input-container class="md-block">
+                    <label>Quais pontos fortes?</label>
+                    <textarea ng-model="opiniaoDisserta.pontosFortes" required minlength="10" maxlength="250" md-maxlength="250" rows="1" md-select-on-focus></textarea>
+                </md-input-container>
+            </div>
+        </div>
+        <div ng-repeat="perguntaAr in treinamento.perguntasAR" layout-align="center" layout="row" flex="50" flex-xs="100" layout-wrap>
+            <md-card layout="row" flex="100" layout-wrap>
+                <span class="md-headline grupo-aspectos" flex="100" layout="row" layout-wrap layout-align="center">
+                    {{perguntaAr.desc}}
+                </span>
+                <div class="perguntas" ng-repeat="pergunta in perguntaAr.perguntas" flex="100" layout="row" layout-wrap>
+                    <p flex="100" layout="row" class="box">{{($index+1)}}. {{pergunta.questao}}</p>
+                    <div class="respostas" flex="100" layout="row" layout-wrap ng-init="perguntaAr.perguntas[$index].opiniao = null">
+                        <md-radio-group required ng-model="perguntaAr.perguntas[$index].opiniao" flex="100" layout="row" layout-align="start center" layout-wrap>
+                            <md-radio-button ng-value="opiniao.id_opiniao" ng-repeat="opiniao in pergunta.opinioes">{{opiniao.desc}}</md-radio-button>
+                        </md-radio-group>
+                    </div>
+                </div>
+            </md-card>
+        </div>
+    </form>    
+    <div class="saveAr">
+        <md-button class="md-fab md-warn save" ng-disabled="!avaliacaoReacao.$valid" ng-click="saveAr()">
+            <md-tooltip md-direction="top">Enviar avaliação</md-tooltip>
+            <i class="material-icons" ng-show="!loadingSaveAr">save</i>
+            <md-progress-circular ng-show="loadingSaveAr" class="md-hue-2 loading-btn" md-diameter="20px"></md-progress-circular>            
+        </md-button>
+    </div>
+    </md-content>

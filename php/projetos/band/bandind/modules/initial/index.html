@@ -1,0 +1,47 @@
+<section id="initial" ng-init="init()">
+    <div class="login-field-set" layout="row" layout-align="center center" layout-wrap>
+        <div flex="100" layout="row" layout-align="center center">
+            <img src="media/bandeirantes-log.png" alt="">
+        </div>
+        <md-card flex-xs="90" flex-gt-xs="50" flex-gt-sm="40" flex-gt-md="30">
+            <md-toolbar>
+                <div class="md-toolbar-tools" layout="row">
+                    <h2><span>E.D.I &nbsp;</span></h2>
+                    <i class="material-icons">cloud_upload</i>
+                </div>
+            </md-toolbar>
+            <md-card-content>
+                <form name="formLoginAd">
+                    <md-input-container class="md-block">
+                        <label>CPF</label>
+                        <input type="text" name="login" maxlength="11" minlength="5" numbers ng-model="login.cpf" placeholder="Digite seu cpf" title="Digite seu cpf" required />
+                        <div ng-messages="formLoginAd.login.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Insira seu CPF!</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Senha</label>
+                        <input type="password" name="senha" ng-model="login.senha" 
+                            placeholder="Digite sua senha" title="Digite sua senha" 
+                            required maxlength="20" md-maxlength="20" 
+                        />
+                        <div ng-messages="formLoginAd.senha.$error" role="alert" multiple="">
+                            <div ng-message="required" class="my-message">Insira sua senha!</div>
+                        </div>
+                    </md-input-container>
+                    <div layout="column" flex="100" layout-align="start center">
+                        <div layout="row" layout-align="end center" flex="50">
+                            <md-button ng-disabled="!formLoginAd.$valid" ng-click="submit()" class="md-raised md-primary">&nbsp Login &nbsp</md-button>
+                        </div>
+                        <div layout="row" layout-align="start center" flex="50" class="esqueceu-senha">
+                            <a href="#" ng-click="openDialog('rsenha')">Esqueceu a senha?</a>
+                        </div>
+                        <div layout="row" layout-align="start center" flex="50" class="esqueceu-senha">
+                            <a href="#" ng-click="openDialog('cadastre')">Cadastre-se!</a>
+                        </div>
+                    </div>
+                </form>
+            </md-card-content>
+        </md-card>
+    </div>
+</section>

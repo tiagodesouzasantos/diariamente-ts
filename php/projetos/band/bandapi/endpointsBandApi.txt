@@ -1,0 +1,21 @@
++--------+-----------+---------------------------------------+----------------------------+--------------------------------------------------------+--------------+
+| Domain | Method    | URI                                   | Name                       | Action                                                 | Middleware   |
++--------+-----------+---------------------------------------+----------------------------+--------------------------------------------------------+--------------+
+|        | GET|HEAD  | /                                     |                            | Closure                                                | web          |
+|        | GET|HEAD  | api/v1                                |                            | Closure                                                | web          |
+|        | POST      | api/v1/auth/login                     |                            | App\Http\Controllers\AuthController@authenticate       | web          |
+|        | GET|HEAD  | api/v1/recoverpass                    | api.v1.recoverpass.index   | App\Http\Controllers\HashRecoverPassController@index   | web          |
+|        | POST      | api/v1/recoverpass                    | api.v1.recoverpass.store   | App\Http\Controllers\HashRecoverPassController@store   | web          |
+|        | GET|HEAD  | api/v1/recoverpass/create             | api.v1.recoverpass.create  | App\Http\Controllers\HashRecoverPassController@create  | web,jwt.auth |
+|        | GET|HEAD  | api/v1/recoverpass/{recoverpass}      | api.v1.recoverpass.show    | App\Http\Controllers\HashRecoverPassController@show    | web          |
+|        | DELETE    | api/v1/recoverpass/{recoverpass}      | api.v1.recoverpass.destroy | App\Http\Controllers\HashRecoverPassController@destroy | web,jwt.auth |
+|        | PUT|PATCH | api/v1/recoverpass/{recoverpass}      | api.v1.recoverpass.update  | App\Http\Controllers\HashRecoverPassController@update  | web,jwt.auth |
+|        | GET|HEAD  | api/v1/recoverpass/{recoverpass}/edit | api.v1.recoverpass.edit    | App\Http\Controllers\HashRecoverPassController@edit    | web,jwt.auth |
+|        | GET|HEAD  | api/v1/usuarios                       | api.v1.usuarios.index      | App\Http\Controllers\UsuariosController@index          | web,jwt.auth |
+|        | POST      | api/v1/usuarios                       | api.v1.usuarios.store      | App\Http\Controllers\UsuariosController@store          | web          |
+|        | GET|HEAD  | api/v1/usuarios/create                | api.v1.usuarios.create     | App\Http\Controllers\UsuariosController@create         | web,jwt.auth |
+|        | DELETE    | api/v1/usuarios/{usuarios}            | api.v1.usuarios.destroy    | App\Http\Controllers\UsuariosController@destroy        | web,jwt.auth |
+|        | PUT|PATCH | api/v1/usuarios/{usuarios}            | api.v1.usuarios.update     | App\Http\Controllers\UsuariosController@update         | web,jwt.auth |
+|        | GET|HEAD  | api/v1/usuarios/{usuarios}            | api.v1.usuarios.show       | App\Http\Controllers\UsuariosController@show           | web,jwt.auth |
+|        | GET|HEAD  | api/v1/usuarios/{usuarios}/edit       | api.v1.usuarios.edit       | App\Http\Controllers\UsuariosController@edit           | web,jwt.auth |
++--------+-----------+---------------------------------------+----------------------------+--------------------------------------------------------+--------------+

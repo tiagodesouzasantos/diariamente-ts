@@ -1,0 +1,48 @@
+<md-dialog id="nova-ocorrencia" flex-xs="95" flex-gt-sm="60" aria-label="Novas Ocorrências">
+    <form name="novasOco" ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Adicione uma nova ocorrência</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="homeCtrl.closeModal()">
+                    <i class="material-icons">close</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content layout="row" flex="100">
+            <div flex="100" layout="row" layout-align="start center" layout-wrap>
+                <md-input-container flex="30" layout="row">
+                    <label>Data da ocorrência</label>
+                    <md-datepicker required ng-model="homeCtrl.ocor.dtOco"></md-datepicker>
+                </md-input-container>
+                <md-input-container flex="20" layout="row">
+                    <label>Hora ocorrência</label>
+                    <input type="text" hours ng-minlength="5" required ng-model="homeCtrl.ocor.hrOco">
+                </md-input-container>
+                <md-input-container flex="25" layout="row">
+                    <label>Cód. ocorrência</label>
+                    <md-select required aria-label="Cód. ocorrência" ng-model="homeCtrl.ocor.searchOcoTivit" md-on-close="buscaOcoTivit=''" data-md-container-class="selectdemoSelectHeader">
+                        <md-select-header class="demo-select-header" flex="100" layout="row">
+                            <input flex="100" layout="row" ng-model="buscaOcoTivit" type="search" placeholder="Procure a ocorrência" class="header-searchbox">
+                        </md-select-header>
+                        <md-optgroup label="Cód. ocorrência">
+                            <md-option  ng-value="ocorrenciaTivit.id" ng-repeat="ocorrenciaTivit in homeCtrl.listaOcorrenciasTivit |
+                                              filter:buscaOcoTivit">{{ocorrenciaTivit.cod}} - {{ocorrenciaTivit.desc_ocorrencias}}</md-option>
+                        </md-optgroup>
+                    </md-select>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions flex="100" layout="row">            
+            <md-button ng-click="homeCtrl.closeModal()">
+                Cancelar
+            </md-button>
+            <md-button ng-disabled="!novasOco.$valid" flex="20" layout-align="center center" ng-click="homeCtrl.saveOcor()">
+                <p ng-show="!homeCtrl.progress">Salvar</p>
+                <md-progress-circular ng-show="homeCtrl.progress" class="md-hue-2 loading-btn" md-diameter="20px"></md-progress-circular>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

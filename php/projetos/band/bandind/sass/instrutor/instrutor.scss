@@ -1,0 +1,27 @@
+#instrutor{
+    padding: 5px;
+    md-tabs {
+        height: calc(100vh - 78px);
+    }
+    
+}
+#instrutor-avaliacao{
+    #lista-avaliacao{
+        overflow-y: scroll;
+    }
+    #lista-questoes{
+        overflow-y: scroll;
+    }
+    .lista-height{
+        height: 60px!important;
+    }
+    .lista-avaliacao{
+        font-size: small;
+        line-height: normal;
+    }
+    // md-tabs-content {
+    //     overflow-y: hidden;
+    //     overflow-x: hidden;
+    //     overflow: scroll;
+    // }
+}

@@ -1,0 +1,59 @@
+<md-dialog id="nova-ocorrencia" flex-xs="95" flex-gt-sm="60" aria-label="Novas Ocorrências">
+    <form name="novasOco" ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Lista de ocorrências - {{homeCtrl.listaOcorrencia.nrdi}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="homeCtrl.closeModal()">
+                    <i class="material-icons">close</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content layout="row" flex="100">
+            <div class="dialog-body" flex="100" layout="row" layout-wrap>
+                <div class="header" flex="100" layout="row" layout-align="center center">
+                    <span class="title" flex="20" layout="row" title="Data ocorrência">Data ocorrência</span>
+                    <span class="title" flex="20" layout="row" title="Hora ocorrência">Hora ocorrência</span>
+                    <span class="title" flex="40" layout="row" title="Ocorrência">Ocorrência</span>
+                    <span class="title" flex="10" layout="row" layout-align="center center" title="Excluir">Excluir</span>
+                    <span class="title" flex="10" layout="row" title="Gerar arq.">Gerar arq.</span>
+                </div>
+                <div flex="100">
+                    <md-divider></md-divider>
+                </div>
+                <div flex="100" layout="row" layout-align="center center" ng-repeat="ocorrencia in homeCtrl.listaOcorrencia.ocorrencias" layout-wrap>
+                    <span flex="20" layout="row"  title="{{ocorrencia.dt_oco | dtBrFormat}}">{{ocorrencia.dt_oco | dtBrFormat}}</span>
+                    <span flex="20" layout="row"  title="{{ocorrencia.hr_oco}}">{{ocorrencia.hr_oco}}</span>
+                    <span flex="40" layout="row"  title="{{homeCtrl.findOcorrenciaTivit(ocorrencia.fk_cod_oco_tivit)}}">{{homeCtrl.findOcorrenciaTivit(ocorrencia.fk_cod_oco_tivit)}}</span>
+                    <div flex="10" layout="row" layout-align="center center">
+                        <md-button class="count-oco" layout="row" layout-align="center center" ng-click="homeCtrl.deletaOco(ocorrencia)" title="Deletar">
+                            <i class="icon material-icons">delete</i>
+                        </md-button>
+                    </div>
+                    <div flex="10" layout="row" layout-align="center center">
+                        <md-button class="count-oco" layout="row" layout-align="center center"
+                        ng-click="homeCtrl.gerarEdi(homeCtrl.listaOcorrencia,ocorrencia)">
+                            <md-icon class="icon svg" md-svg-src="media/icons/file-download-solid.svg" aria-label="Download"></md-icon>
+                            <md-progress-circular ng-show="homeCtrl.progress" class="md-hue-2 loading-btn" md-diameter="20px"></md-progress-circular>
+                        </md-button>
+                    </div>
+                    <a ng-show="false" id="createdFile" href=""></a>
+                    <div flex="100">
+                        <md-divider></md-divider>
+                    </div>
+                </div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions flex="100" layout="row" layout-wrap ng-show="homeCtrl.listaOcorrencia.ocorrencias.length>1">
+            <label class="title" flex="100" layout="row" layout-align="center center">Gerar todos</label>
+            <div flex="100" layout="row" layout-align="center center">
+                <md-button class="count-oco" layout="row" ng-disabled="!novasOco.$valid" layout-align="center center" ng-click="homeCtrl.gerarEdiTodos(homeCtrl.listaOcorrencia)">
+                    <md-icon ng-show="!homeCtrl.progress" class="icon svg" md-svg-src="media/icons/file-download-solid.svg" aria-label="Download">
+                    <md-progress-circular ng-show="homeCtrl.progress" class="md-hue-2 loading-btn" md-diameter="20px"></md-progress-circular>
+                </md-button>
+            </div>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

@@ -1,0 +1,79 @@
+<section id="meus-dados" ng-init="init()">
+    <div layout="row" layout-align="center" layout-wrap>
+        <md-card flex-xs="90" flex-gt-xs="60" layout="row" layout-wrap>
+            <md-toolbar flex="100" layout="row" layout-wrap>
+                <div class="md-toolbar-tools">
+                    <h2><span>Meus Dados</span></h2>
+                </div>
+            </md-toolbar>
+            <md-card-content flex="100" layout="row" layout-wrap>
+                <form name="meusDados" flex="100" layout="row" layout-wrap>
+                    <div flex="100" layout="row" layout-wrap>
+                        <md-input-container flex="50" layout="row" layout-wrap>
+                            <label>CPF</label>
+                            <input type="text" ng-disabled="true" name="login" ng-model="login.cpf" title="Seu CPF." required/>
+                            <div ng-messages="meusDados.login.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Insira seu cpf!</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container flex="50" layout="row" layout-wrap>
+                            <label>Matrícula</label>
+                            <input type="text" ng-disabled="true" name="matricula" ng-model="login.matricula" placeholder="Digite sua matrícula" title="Digite sua matrícula"
+                                required/>
+                            <div ng-messages="meusDados.login.$error" role="alert" multiple="">
+                                <div ng-show="meusDados.login.$error.required" ng-message="required" class="my-message">
+                                    Insira sua matrícula!
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>     
+                    <div flex="100" layout="row" layout-wrap>
+                        <md-input-container flex="50" layout="row" layout-wrap>
+                            <label>Nome</label>
+                            <input type="text" ng-disabled="true" name="nome" ng-model="login.nome" placeholder="Digite seu nome" title="Digite seu nome" required/>
+                            <div ng-messages="meusDados.login.$error" role="alert" multiple="">
+                                <div ng-show="meusDados.login.$error.required" ng-message="required" class="my-message">
+                                    Insira seu nome!
+                                </div>                                                                                
+                            </div>
+                        </md-input-container>
+                        <md-input-container flex="50" layout="row" layout-wrap>
+                            <label>Email</label>
+                            <input type="email" name="email" ng-model="login.email" placeholder="Digite seu e-mail" title="Digite seu e-mail" required/>
+                            <div ng-messages="meusDados.login.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">
+                                    Insira seu e-mail!
+                                </div>                                                                                
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div flex="100" layout="row" layout-wrap>                        
+                        <md-input-container flex="50" layout="row" layout-wrap class="md-block">
+                            <label>Senha</label>
+                            <input type="password" name="senha" ng-model="login.senha" placeholder="Digite sua senha" title="Digite sua senha"
+                             maxlength="20" md-maxlength="20" />
+                            <div ng-messages="meusDados.login.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">
+                                    Insira sua senha!
+                                </div>                                                                                
+                            </div>
+                        </md-input-container>
+                        <md-input-container flex="50" layout="row" layout-wrap class="md-block">
+                            <label>Repita sua senha</label>
+                            <input type="password" maxlength="20" md-maxlength="20" name="rsenha"  ng-model="login.rsenha" placeholder="Digite sua senha novamente" title="Digite sua senha novamente"/>
+                            <div ng-messages="meusDados.login.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">
+                                    Insira sua senha novamente!
+                                </div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div flex="100" layout="row" layout-wrap>
+                        <md-button ng-disabled="!meusDados.$valid || (login.senha!=''?(login.senha!=login.rsenha?true:false):false)" ng-click="save()" class="md-raised md-primary">&nbsp Salvar &nbsp</md-button>
+                    </div>                    
+                </form>
+            </md-card-content>
+        </md-card>
+    </div>
+
+</section>

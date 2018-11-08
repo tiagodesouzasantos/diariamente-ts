@@ -1,0 +1,46 @@
+<section id="home" ng-init="homeCtrl.init()" layout="row" flex="100" layout-wrap>
+    <md-toolbar layout="row" flex="100" class="md-1-line md-hue-1">
+        <div layout="row" flex="100" layout-align="center center">
+            <div class="md-toolbar-tools" flex="50">
+                <span>Ocorrências EDI</span>
+            </div>
+            <div class="md-toolbar-tools" flex="50" layout="row" layout-align="end center">
+                <md-input-container flex="50" layout="row">
+                    <i class="material-icons search">search</i><input aria-label="Busque sua ocorrência aqui" ng-model="homeCtrl.buscaOcoEdi">
+                </md-input-container>
+            </div>
+        </div>
+    </md-toolbar>
+    <md-content class="list-edi-oco" layout="row" flex="100" layout-wrap>
+            <div layout="row" flex="100" layout-align="start start" layout-wrap>
+                <div layout="row" flex="100" layout-align="start center" layout-wrap  
+                    ng-repeat="ocorrencia in homeCtrl.ocorrencias | filter:homeCtrl.buscaOcoEdi">                    
+                    <div class="list-item" flex="100" layout="row">
+                        <div flex="60" layout-align="start center" layout="row" layout-wrap>
+                            <span flex="30" title="Doc.: {{ocorrencia.nrdi}}"><strong>Doc.: </strong>{{ocorrencia.nrdi}}</span>
+                            <span flex="30" layout-align="end center" layout="row">
+                                <strong>Veiculos.:&nbsp</strong>
+                                {{ocorrencia.veiculos==undefined?"&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;":ocorrencia.veiculos}}
+                            </span>    
+                            <p flex="100" class="ch-acesso"><strong>Chave de acesso.: </strong>{{ocorrencia.ch_acesso}}</p>
+                        </div>
+                        <div flex="20" layout-align="center center" layout="column">                        
+                            <span class="last-oco">{{ocorrencia.ocorrencias[ocorrencia.ocorrencias.length-1].dt_oco | dtBrFormat}}</span>
+                            <span class="last-oco">{{ocorrencia.ocorrencias[ocorrencia.ocorrencias.length-1].hr_oco}}                        
+                        </div>
+                        <div flex="20" layout-align="end center" layout="row" >
+                            <md-button ng-click="homeCtrl.openNewOco(ocorrencia)" class="count-oco" layout-align="center center" layout="row">
+                                <i class="material-icons icon">library_add</i>
+                            </md-button>
+                            <md-button ng-click="homeCtrl.listOcoEDI(ocorrencia)" class="count-oco">{{ocorrencia.ocorrencias.length}}</md-button>                        
+                        </div>
+                    </div>
+                    <div flex="100">
+                        <md-divider></md-divider>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+            </div>
+            <div layout="row" flex="100" layout-align="center start" ng-show="homeCtrl.ocorrencias.length==0">Não existe nenhum registro!</div>
+    </md-content>
+</section>

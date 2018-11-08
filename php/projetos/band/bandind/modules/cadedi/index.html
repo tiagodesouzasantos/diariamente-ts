@@ -1,0 +1,98 @@
+<section id="edi" ng-init="cadEdiCtrl.init()">
+
+    <md-content layout="row">
+        <div class="busca-cte" flex="100" layout="row" layout-align="start center">
+            <form name="buscaCte" class="busca-cte" layout="row" flex="100" layout-wrap>                
+                <div flex="100" layout="row" layout-align="start center" layout-wrap>
+                    <div flex="35" layout="row">
+                        <md-input-container class="md-block" flex="100" layout="row">
+                            <label>Chave de acesso</label>
+                            <input layout="row" name="chaveacesso" numbers ng-model="cadEdiCtrl.edi.nfe.chaveacesso" 
+                                placeholder="Digite sua chave de acesso" required ng-pattern="/^[0-9]{44}$/"
+                                md-maxlength="44" maxlength="44">
+                        </md-input-container>
+                    </div>
+                    <md-button ng-click="cadEdiCtrl.getDadosChaveAcesso()" class="md-raised md-primary">Adicionar</md-button>
+                </div>
+                <div flex="100" layout="row" layout-align="start center" layout-wrap>
+                    <md-input-container class="md-block height-select" flex="25" layout="row">
+                        <label>CGC da transportadora da NF-e</label>
+                        <md-select aria-label="CGC da transportadora da NF-e" ng-model="cadEdiCtrl.edi.nfe.cgcTransp" ng-change="cadEdiCtrl.setTranspRazao()" required>
+                            <md-option ng-repeat="empresa in cadEdiCtrl.transportadoras" ng-value="empresa">
+                                {{empresa.cgc_transp}} - {{empresa.razao_social_transp}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex="30" layout="row">
+                        <label>Razão social transportadora</label>
+                        <input ng-model="cadEdiCtrl.edi.nfe.razaoSocialTransp" 
+                            placeholder="Digite a razão social da transportadora" required                            
+                            minlength="40"
+                            md-maxlength="40" maxlength="40">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex="20" layout="row">
+                        <label>Nr Doc</label>
+                        <input ng-model="cadEdiCtrl.edi.nrDi" uppercase
+                            placeholder="Digite o numero do doc" md-maxlength="50" maxlength="50">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex="20" layout="row">
+                        <label>Veiculo</label>
+                        <input ng-model="cadEdiCtrl.edi.veiculo" uppercase
+                            placeholder="Digite os dados do veiculo" md-maxlength="15" maxlength="15">
+                    </md-input-container>
+                </div>
+                <div flex="100" layout="row" layout-align="start center" layout-wrap>
+                    <div flex="20" layout="row">
+                        <md-input-container class="md-block" flex="100" layout="row">
+                            <label>CGC do emissor da NF-e</label>
+                            <input numbers ng-model="cadEdiCtrl.edi.nfe.cgc" 
+                                placeholder="Digite o cgc da nfe" required ng-pattern="/^[0-9]{14}$/"
+                                md-maxlength="14" maxlength="14">
+                        </md-input-container>
+                    </div>
+                    <div flex="20" layout="row">
+                        <md-input-container class="md-block" flex="100" layout="row">
+                            <label>Série da NF-e</label>
+                            <input ng-model="cadEdiCtrl.edi.nfe.serie" 
+                                placeholder="Digite a série da nfe" required ng-pattern="/^[0-9]{3}$/"
+                                md-maxlength="3" maxlength="3">
+                        </md-input-container>
+                    </div>
+                    <div flex="20" layout="row">
+                        <md-input-container class="md-block" flex="100" layout="row">
+                            <label>Numero da NF-e</label>
+                            <input ng-model="cadEdiCtrl.edi.nfe.numero" 
+                                placeholder="Digite o numero da nfe" required ng-pattern="/^[0-9]{8}$/"
+                                md-maxlength="8" maxlength="8">
+                        </md-input-container>
+                    </div>
+                </div>
+                <div flex="100" layout="row" layout-align="start center" layout-wrap>
+                    <md-input-container flex="20" layout="row">
+                        <label>Data da ocorrência</label>                            
+                        <md-datepicker required ng-model="cadEdiCtrl.edi.dtOco"></md-datepicker>
+                    </md-input-container>
+                    <md-input-container  flex="15" layout="row">
+                        <label>Hora ocorrência</label>
+                        <input type="text" hours ng-minlength="5" required ng-model="cadEdiCtrl.edi.hrOco">
+                    </md-input-container>
+                    <md-input-container flex="25" layout="row">
+                        <label>Cód. ocorrência</label>
+                        <md-select aria-label="Cód. ocorrência" ng-model="cadEdiCtrl.edi.searchOcoTivit" md-on-close="buscaOcoTivit=''" data-md-container-class="selectdemoSelectHeader" required>
+                            <md-select-header class="demo-select-header" flex="100" layout="row">
+                                <input flex="100" layout="row" ng-model="buscaOcoTivit" type="search" placeholder="Procure a ocorrência" class="header-searchbox">
+                            </md-select-header>
+                            <md-optgroup label="Cód. ocorrência">
+                                <md-option ng-value="ocorrenciaTivit.id" ng-repeat="ocorrenciaTivit in cadEdiCtrl.listaOcorrenciasTivit |
+                                  filter:buscaOcoTivit">{{ocorrenciaTivit.cod}} - {{ocorrenciaTivit.desc_ocorrencias}}</md-option>
+                            </md-optgroup>
+                        </md-select>
+                    </md-input-container>
+                </div>
+                <div flex="100" layout="row" layout-align="start center" layout-wrap>
+                    <md-button ng-disabled="!buscaCte.$valid" ng-click="cadEdiCtrl.saveEdi()" class="md-raised md-primary">Salvar</md-button>                    
+                </div>
+            </form>
+        </div>
+    </md-content>
+</section>

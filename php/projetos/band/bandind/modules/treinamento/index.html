@@ -1,0 +1,21 @@
+<section id="treinamento" ng-init="init()">
+
+    <md-content layout="row"  flex="100" layout-wrap>        
+        <md-tabs md-selected="selectedTab" flex="100" md-border-bottom layout-align="center">
+            <md-tab label="Ficha Técnica">
+                 <ng-include src="'/modules/treinamento/treinamento.htm'"></ng-include>                
+            </md-tab>
+            <md-tab label="Avaliação Reação" ng-if="showAvaliacaoReacao">
+                <ng-include src="'/modules/treinamento/avaliacao-reacao.htm'"></ng-include>
+            </md-tab>
+            <md-tab label="Avaliação" ng-if="showAvaliacao">
+            <!-- <md-tab label="Avaliação" ng-if="showAvaliacao"> -->
+                <ng-include src="'/modules/treinamento/avaliacao.htm'"></ng-include>
+            </md-tab>
+            <md-tab label="Certificados" ng-if="showCertificado">
+                <ng-include src="'/modules/treinamento/certificado.htm'"></ng-include>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+
+</section>

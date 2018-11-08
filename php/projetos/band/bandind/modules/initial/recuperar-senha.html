@@ -1,0 +1,37 @@
+<md-dialog id="rsenha" flex-xs="90" flex-gt-sm="30" aria-label="Horarios">
+    <form name="recuperarSenha" ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Recuperar senha</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="initial.closeModal()">
+                    <i class="material-icons">close</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-input-container class="md-block" flex="80" flex-xs="100">
+                    <label>CPF</label>
+                    <input type="text" name="login" maxlength="11" minlength="5" numbers ng-model="initial.login.cpf"
+                        placeholder="Digite seu cpf" title="Digite seu cpf" required />
+                    <div ng-messages="cadastrese.login.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Insira seu CPF!</div>
+                    </div>
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions flex="100" layout="row">
+            <span flex ng-class="{alertText:!initial.msgClass,blue:initial.msgClass}">{{initial.recuperarsenha}}</span>
+            <md-button ng-click="initial.closeModal()">
+                Cancelar
+            </md-button>
+            <md-button ng-disabled="!recuperarSenha.$valid" flex="20" layout-align="center center" ng-click="initial.recoverPass()">
+                <p ng-show="!initial.progress">Enviar</p>
+                <md-progress-circular ng-show="initial.progress" class="md-hue-2 loading-btn" md-diameter="20px"></md-progress-circular>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

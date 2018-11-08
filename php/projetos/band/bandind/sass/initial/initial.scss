@@ -1,0 +1,34 @@
+#initial {
+    height: 100vh;
+    // background: #FFF;
+    .login-field-set {
+        height: 100vh;
+    }
+}
+
+#cadastrese{
+    md-dialog-content{
+        padding: 10px;
+    }
+    p.msgError{
+        color: #d14a4a;
+        font-size: 12px;
+        padding: 5px;
+        // height: 17px;        
+    }
+    p.msgError:hover{
+        color: #fff;        
+        background-color: #d14a4a;
+        border-radius: 5px;
+    }
+    p.msg-success{
+        color: $azulBtn;
+        font-size: 12px;
+        padding: 5px;
+    }
+    p.msg-success:hover {
+        color: #fff;
+        background-color: $azulBtn;
+        border-radius: 5px;
+    }
+}

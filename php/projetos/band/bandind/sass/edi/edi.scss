@@ -1,0 +1,22 @@
+#edi {
+    max-height: 100%;
+    position: relative;
+    height: calc(100vh - 75px);
+    overflow: scroll;
+    overflow-y: hidden;
+    padding: 10px;
+    .busca-cte{
+        padding: 2px 10px;
+    }
+    .md-datepicker-input-container{
+        display: flex!important;
+    }
+    md-datepicker{
+        max-height: 30px;
+        width: 300px;
+    }
+    .height-select{
+        height: 58px;
+    }
+    
+}

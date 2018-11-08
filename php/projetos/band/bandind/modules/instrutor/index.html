@@ -1,0 +1,18 @@
+<section id="instrutor" ng-controller="instrutorController as instCtrl">
+    <md-content layout="row" flex="100" layout-wrap ng-init="instCtrl.init()">
+        <md-tabs md-selected="selectedTab" flex="100" md-border-bottom layout-align="center">
+            <md-tab label="Avaliações">
+                <ng-include src="'/modules/instrutor/templates/avaliacao.htm'"></ng-include>
+            </md-tab>
+            <md-tab label="Avaliação x Treinamento">
+                <ng-include src="'/modules/instrutor/templates/avaliacaoXtreinamentos.htm'"></ng-include>
+            </md-tab>
+            <!-- <md-tab label="Avaliação">
+                <ng-include src="'/modules/instrutor/templates/avaliacao.htm'"></ng-include>
+            </md-tab>
+            <md-tab label="Certificados">
+                <ng-include src="'/modules/instrutor/templates/certificado.htm'"></ng-include>
+            </md-tab> -->
+        </md-tabs>
+    </md-content>
+</section>

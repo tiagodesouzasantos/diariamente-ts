@@ -1,0 +1,69 @@
+<md-dialog id="cadastrese" flex-xs="90" flex-gt-sm="50" aria-label="Horarios">
+    <form name="cadastrese" ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Cadastre - se</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="initial.closeModal()">
+                    <i class="material-icons">close</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content flex="95" layout="row" layout-wrap>
+                <md-input-container class="md-block" flex="30" flex-xs="100">
+                    <label>CPF</label>
+                    <input type="text" ng-blur="initial.getUserDataByCpf()" name="login" maxlength="11" minlength="5" numbers ng-model="initial.login.cpf" placeholder="Digite seu cpf"
+                        title="Digite seu cpf" required />
+                    <div ng-messages="cadastrese.login.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Insira seu CPF!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex="70" flex-xs="100">
+                    <label>Nome</label>
+                    <input type="text" name="nome" maxlength="50" minlength="3" 
+                        ng-model="initial.login.nome" placeholder="Digite seu nome"
+                        ng-disabled="true"
+                        title="Digite seu nome" required />
+                    <div ng-messages="cadastrese.login.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Insira seu nome!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex="50" flex-xs="100">
+                    <label>E-mail</label>
+                    <input type="email" name="email" maxlength="150" minlength="5" ng-model="initial.login.email" placeholder="Digite seu email"
+                        title="Digite seu email" required />
+                    <div ng-messages="cadastrese.login.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Insira seu email!</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex="50" flex-xs="100">
+                    <label>Senha</label>
+                    <input type="password" name="senha" ng-model="initial.login.senha" 
+                        placeholder="Digite sua senha" title="Digite sua senha"
+                        required  maxlength="20" md-maxlength="20" 
+                    />
+                    <div ng-messages="cadastrese.senha.$error" role="alert" multiple="">
+                        <div ng-message="required" class="my-message">Insira sua senha!</div>
+                    </div>
+                </md-input-container> 
+                <div flex="100" layout="row" layout-align="center center">
+                    <p class="msgError" title="{{initial.errorMsg}}">{{initial.errorMsg}}</p>
+                </div>
+                <!-- <div flex="100" ng-if="initial.successMsg\" layout="row" layout-align="center center">
+                    <p class="msg-success" title="{{initial.successMsg}}">{{initial.successMsg}}</p>
+                </div> -->
+        </md-dialog-content>
+
+        <md-dialog-actions flex="100" layout="row">
+            <span flex ng-class="{alertText:!initial.msgClass,blue:initial.msgClass}">{{initial.cadastrese}}</span>
+            <md-button ng-click="initial.closeModal()">
+                Cancelar
+            </md-button>
+<md-button ng-disabled="!cadastrese.$valid" flex="20" layout-align="center center" ng-click="initial.saveNewUser()">
+                <p ng-show="!initial.progress">Salvar</p>
+                <md-progress-circular ng-show="initial.progress" class="md-hue-2 loading-btn" md-diameter="20px"></md-progress-circular>
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

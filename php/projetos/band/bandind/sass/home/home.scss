@@ -1,0 +1,77 @@
+#home {
+    // max-height: 100%;
+    position: relative;
+    // height: calc(100vh - 70px);
+    overflow: scroll;
+    overflow-y: hidden;
+    padding: 5px;
+    .list-edi-oco{
+            height: calc(100vh - 150px);
+    }
+    .search{
+        padding-top: 10px;
+    }
+    .count-oco{
+        border-radius: 50px;
+        width: 40px;
+        height: 40px;
+        min-width: 40px !important;
+        min-height: 40px !important;
+    }
+    .list-item{
+        padding: 10px;
+    }
+    .icon{
+        color: #646464;
+    }
+    .ch-acesso{
+        font-size: smaller;
+        color: #848484;
+    }
+    .last-oco{
+        background-color: #f33d3d;
+        border-radius: 5px;
+        padding: 3px;
+        color: #fff;
+        margin-top: 2px;
+    }
+}
+#nova-ocorrencia{
+    .dialog-body{
+        padding: 8px;
+    }
+    .header{
+        font-weight: bold;
+        line-height: 25px;
+    }
+    .md-datepicker-input-container{
+        display: flex!important;
+    }
+    md-datepicker {
+        max-height: 30px;
+        width: 300px;
+    }
+    .icon{
+        color: #646464;        
+    }
+    .svg{
+        width: 20px;
+        height: 20px;
+        min-width: 20px !important;
+        min-height: 20px !important;
+    }
+    span.title{
+        font-size: 14px;
+    }
+    .title{
+        font-size: small;
+        font-weight: bold;
+    }
+    .count-oco {
+        border-radius: 50px;
+        width: 40px;
+        height: 40px;
+        min-width: 40px !important;
+        min-height: 40px !important;
+    }
+}

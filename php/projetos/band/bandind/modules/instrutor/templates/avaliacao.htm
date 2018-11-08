@@ -1,0 +1,28 @@
+<section id="instrutor-avaliacao" ng-controller="instrutorAvaliacaoController as instAvalCtrl">
+    <md-content ng-init="instAvalCtrl.init()" flex="100" layout="row" layout-wrap>
+        <div id="lista-avaliacao" flex="20" layout="row" layout-wrap>
+            <md-list>
+                <md-list-item class="lista-height" ng-repeat="avaliacao in instAvalCtrl.getListaAvaliacao" ng-click="null" flex="100"
+                    layout="row" layout-wrap>
+                    <div class="md-list-item-text lista-avaliacao" layout="column">
+                        <span><strong>Código da avaliação:</strong> {{ avaliacao.id }}</span> 
+                        <span><strong>Nome:</strong> {{ avaliacao.desc }}</span> 
+                    </div>
+                </md-list-item>
+                <md-divider></md-divider>                
+            </md-list>
+        </div>
+        <div id="lista-questoes" flex="20" layout="row" layout-wrap>
+            <md-list>
+                <md-list-item class="lista-height" ng-repeat="avaliacao in instAvalCtrl.getListaAvaliacao2" ng-click="null" flex="100"
+                    layout="row" layout-wrap>
+                    <div class="md-list-item-text lista-avaliacao" layout="column">
+                        <span><strong>Código da avaliação:</strong> {{ avaliacao.id }}</span> 
+                        <span><strong>Nome:</strong> {{ avaliacao.desc }}</span> 
+                    </div>
+                </md-list-item>
+                <md-divider></md-divider>                
+            </md-list>
+        </div>
+    </md-content>
+</section>
