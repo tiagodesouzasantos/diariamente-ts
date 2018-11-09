@@ -1,0 +1,34 @@
+AddHandler php56-script .php
+suPHP_ConfigPath /home/bandeiranteslog1/ 
+
+#RewriteEngine on
+#RewriteCond %{HTTP_HOST} ^www.bandeiranteslogistica.com.br$ [OR]
+#RewriteCond %{HTTP_HOST} ^www.ciaband.com.br$
+#RewriteRule (.*) http://www.bandeiranteslog.com.br/$1 [R=301,L]
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+
+<Files wp-login.php>
+	Order Deny,Allow
+	Deny from all	
+	Allow from 189.44.168.187
+	Allow from 189.44.180.123
+	Allow from 201.28.107.42
+	Allow from 187.60.21.109
+	Allow from 187.60.21.137
+	Allow from 187.60.20.17
+	Allow from 189.44.87.74	
+	Allow from 187.60.18.89
+</Files>
+
+ErrorDocument 403 /403.html 
