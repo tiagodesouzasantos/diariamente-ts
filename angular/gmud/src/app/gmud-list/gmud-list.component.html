@@ -1,0 +1,13 @@
+<section id="gmud-list">
+	<div>
+		<mat-list dense>
+			<mat-list-item *ngFor="let software of listSoftwares let i = index"> 
+				{{i+1}}. {{software?.server}} / {{software?.nmSoft}} 
+				<button mat-icon-button (click)="updateSoftware(software)" color="primary"
+					matTooltip="Atualizar {{software?.nmSoft}}">
+					<mat-icon aria-label="Update System">update</mat-icon>
+				</button>
+			</mat-list-item>
+		</mat-list>
+	</div>
+</section>
