@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BatsService } from '../bats.service';
+// import { Observable } from 'rxjs/Rx';
 @Component({
 	selector: 'app-gmud-list',
 	templateUrl: './gmud-list.component.html',
@@ -13,11 +15,18 @@ export class GmudListComponent implements OnInit {
 		{ nmSoft: "microLedWMS", server:"paradise"}
 	]
 
-	constructor() { }
+	constructor(private _batsService: BatsService){
+
+	}
 
 	ngOnInit() {
 	}  
+
 	updateSoftware(software){
-		console.log('software',software);
+		let post = this._batsService.postBat(software);
+		post.subscribe((res:any[])=>{
+			console.log(res);
+			// this.batRuned = res;
+		});
 	}
 }

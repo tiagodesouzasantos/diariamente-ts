@@ -1,0 +1,20 @@
+{
+  "name": "webservicegmud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "debug": "node --nolazy --inspect-brk=9229 server.js"
+  },
+  "author": "Tiago S. Santos",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "firebase": "^5.6.0",
+    "firebase-admin": "^6.3.0",
+    "mongoose": "^5.3.14"
+  }
+}

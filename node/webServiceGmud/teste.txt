@@ -1,0 +1,15 @@
+ O volume na unidade C n∆o tem nome.
+ O N£mero de SÇrie do Volume Ç B225-CF87
+
+ Pasta de C:\Users\tiago.santos\Desktop\Labs\diariamente-ts\node\webServiceGmud
+
+30/11/2018  10:29    <DIR>          .
+30/11/2018  10:29    <DIR>          ..
+30/11/2018  09:59    <DIR>          api
+30/11/2018  09:37    <DIR>          node_modules
+30/11/2018  09:37           122.126 package-lock.json
+30/11/2018  10:27               481 package.json
+30/11/2018  09:58               720 server.js
+30/11/2018  10:29                38 teste.txt
+               4 arquivo(s)        123.365 bytes
+               4 pasta(s)   212.181.270.528 bytes dispon°veis
