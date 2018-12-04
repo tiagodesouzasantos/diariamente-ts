@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import { Observable } from 'rxjs/Observable';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 
-export class BatsService {
+export class ServersService {
 	baseUrl: string = "http://localhost:3000";
-	constructor(private http:HttpClient) {}
+	constructor(private http: HttpClient) { }
 
-	postBat(bat){
-		return this.http.post(this.baseUrl + '/bats', bat, httpOptions); 
+	getServers() {
+		return this.http.get(this.baseUrl + '/servers',httpOptions);
 	}
 }

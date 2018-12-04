@@ -1,32 +1,48 @@
 import { Component, OnInit } from '@angular/core';
-import { BatsService } from '../bats.service';
+import { BatsService } from '../services/bats.service';
+import { ServersService } from '../services/servers.service';
 // import { Observable } from 'rxjs/Rx';
 @Component({
-	selector: 'app-gmud-list',
+	selector: 'gmud-list',
 	templateUrl: './gmud-list.component.html',
 	styleUrls: ['./gmud-list.component.scss']
 })
 export class GmudListComponent implements OnInit {
-	listSoftwares = [
-	{nmSoft:"kpi",server:"trancoso"},
-	{nmSoft:"microLedFatura",server:"paradise"},
-		{ nmSoft: "microLedOperador", server:"paradise"},
-		{ nmSoft: "microLedRedex", server:"paradise"},	
-		{ nmSoft: "microLedWMS", server:"paradise"}
-	]
 
-	constructor(private _batsService: BatsService){
+	panelOpenState = false;
+	step:number = 0;
+	listSoftwares = [];
+
+	constructor(
+		private _batsService: BatsService, 
+		private _serversService: ServersService){
 
 	}
 
 	ngOnInit() {
+		var servers = this._serversService.getServers();
+		servers.subscribe((res:any[])=>{
+			this.listSoftwares = res;
+		});
 	}  
 
 	updateSoftware(software){
 		let post = this._batsService.postBat(software);
 		post.subscribe((res:any[])=>{
 			console.log(res);
-			// this.batRuned = res;
+			// adicionar logica loading
 		});
+	}	
+
+	setStep(index: number) {
+		this.step = index;
+	}
+
+	nextStep() {
+		this.step++;
+	}
+
+	prevStep() {
+		this.step--;
 	}
 }

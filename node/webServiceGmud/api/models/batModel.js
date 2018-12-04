@@ -1,4 +1,6 @@
 'use strict';
+var con = require('./firebaseCon');
+module.exports = con.collection('bats');
 // var mongoose = require('mongoose');
 // var Schema = mongoose.Schema;
 // var batSchema = new Schema({

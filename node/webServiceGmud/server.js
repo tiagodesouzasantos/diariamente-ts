@@ -3,15 +3,6 @@ var express = require('express'),
     port = process.env.PORT || 3000,
     bodyParser = require('body-parser');
 
-var admin = require("firebase-admin");
-var serviceAccount = require("./api/serviceAccountKey.json");
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://gmud-5b585.firebaseio.com"
-});
-
-var db = admin.firestore();
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -23,8 +14,11 @@ app.use(function (req, res, next) {
     next();
 });
 
-var routes = require('./api/routes/batRoutes');
-routes(app);
+var batRoutes = require('./api/routes/batRoutes');
+var serverRoutes = require('./api/routes/serverRoutes');
+batRoutes(app);
+serverRoutes(app);
+
 app.listen(port);
 
 console.log('Bat RESTful API server started on: ' + port);
