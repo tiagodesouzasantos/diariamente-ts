@@ -36,8 +36,8 @@
 							<span>Ações</span>
 						</mat-list-item>
 						<mat-list-item *ngFor="let software of server.softwares" class="list-item">
-							<span fxFlex="40%">{{software}}</span>
-							<button mat-icon-button (click)="updateSoftware(server)" color="primary" matTooltip="Atualizar {{software}}">
+							<span fxFlex="40%">{{software.name}}</span>
+							<button mat-icon-button (click)="updateSoftware(software)" color="primary" matTooltip="Atualizar {{software.name}}">
 								<mat-icon aria-label="Update System">update</mat-icon>
 							</button>
 						</mat-list-item>
