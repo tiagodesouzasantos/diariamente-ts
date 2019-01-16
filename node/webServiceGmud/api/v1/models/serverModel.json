@@ -1,0 +1,21 @@
+[
+    {
+        "server": "buzios",
+        "softwares": [
+            {
+                "name": "KPI",
+                "update": "C:/node/projetos/webServiceGmud/libs/batches/buziosKpiBandSubProjPush.bat"
+            }
+        ]
+    },
+    {
+        "server": "camburi",
+        "softwares": [
+            {
+                "name": "Gerencial",
+                "update": "C:/node/projetos/webServiceGmud/libs/batches/camburiSGIPAGerencialPush.bat",
+                "updateHomolog": "C:/node/projetos/webServiceGmud/libs/batches/homologs/camburiSGIPAGerencialPush.bat"
+            }
+        ]
+    }
+]

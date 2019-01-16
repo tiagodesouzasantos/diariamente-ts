@@ -1,0 +1,40 @@
+#gmud-list{
+    /* You can add global styles to this file, and also import other style files */
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    form{
+        max-width: 25em;
+        margin: 1em auto;
+    }
+    .list-item{
+        background-color: #fff;
+        margin:5px 0!important;
+        transition: 0s background-color;
+        height: 30px!important;
+    }
+    .list-item:hover{
+        border-radius: 5px;
+        box-shadow: 0 4px 6px -6px #222;
+        transition-delay:0.09s;
+    }
+    .item-list-title{
+        span{
+            font-weight:600;
+            font-size: medium;
+        }
+        background-color: #d1d1d1;
+        border-radius: 5px;
+        height: 30px!important;
+    }
+    mat-progress-spinner{
+        width: 15px;
+        height: 15px;               
+        svg{
+            width: 15px;
+            height: 15px;
+        }
+    }
+    
+}

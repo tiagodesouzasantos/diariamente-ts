@@ -1,0 +1,11 @@
+TypeError: Cannot read property 'substr' of undefined
+    at exports.runBatAction (C:\node\projetos\webServiceGmud\api\v1\controllers\batController.js:13:77)
+    at Layer.handle [as handle_request] (C:\node\projetos\webServiceGmud\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\node\projetos\webServiceGmud\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (C:\node\projetos\webServiceGmud\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (C:\node\projetos\webServiceGmud\node_modules\express\lib\router\layer.js:95:5)
+    at C:\node\projetos\webServiceGmud\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (C:\node\projetos\webServiceGmud\node_modules\express\lib\router\index.js:335:12)
+    at next (C:\node\projetos\webServiceGmud\node_modules\express\lib\router\index.js:275:10)
+    at serveStatic (C:\node\projetos\webServiceGmud\node_modules\serve-static\index.js:75:16)
+    at Layer.handle [as handle_request] (C:\node\projetos\webServiceGmud\node_modules\express\lib\router\layer.js:95:5)

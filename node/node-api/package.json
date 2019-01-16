@@ -1,0 +1,11 @@
+{
+  "name": "api-band",
+  "version": "1.0.0",
+  "description": "Api em desenvolvimento para as aplicações da bandeirantes",
+  "main": "api-band-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tiago S. Santos",
+  "license": "ISC"
+}

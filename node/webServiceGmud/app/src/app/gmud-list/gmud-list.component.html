@@ -1,0 +1,42 @@
+<section id="gmud-list">
+	<loading-screen *ngIf="loadingData"></loading-screen>	
+	<div fxFlex="1%"></div>
+	<div fxLayout="row" fxFlex="98%" fxLayoutAlign="center" *ngIf="!loadingData">
+		<mat-accordion fxFlex="100%">			
+			<mat-expansion-panel *ngFor="let server of listSoftwares let i = index" [expanded]="step === i" (opened)="setStep(i)"
+			hideToggle>
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						{{i+1}}. {{server?.server}}
+					</mat-panel-title>
+					<mat-panel-description>
+						Softwares: {{server.softwares.length}}
+						<mat-icon>map</mat-icon>
+					</mat-panel-description>
+				</mat-expansion-panel-header>
+				<section class="content">
+					<mat-list dense fxFlex="100%">
+						<mat-list-item class="item-list-title">
+							<span fxFlex="30%">Projeto</span>
+							<span fxFlex="10%">Ações</span>
+							<span fxFlex="30%">Mensagens</span>
+						</mat-list-item>
+						<mat-list-item *ngFor="let software of server.softwares" class="list-item">
+							<span fxFlex="30%">{{software.name}}</span>
+							<div fxFlex="10%">
+								<button fxLayoutAlign="start" mat-icon-button (click)="updateSoftware(software)" color="primary" matTooltip="Atualizar {{software.name}}">
+									<mat-icon aria-label="Update System">update</mat-icon>
+								</button>
+							</div>
+							<div fxFlex="50%" fxLayout="row">
+								<mat-progress-spinner fxLayoutAlign="center" diameter="21" *ngIf="software?.updating" fxLayoutAlign="center" [color]="spinner.color" [mode]="spinner.mode"></mat-progress-spinner>
+								<span fxLayoutAlign="start" *ngIf="software?.msg && !software?.updating">{{software.msg}}</span>
+							</div>
+						</mat-list-item>
+					</mat-list>
+				</section>
+			</mat-expansion-panel>
+		</mat-accordion>
+	</div>	
+	<div fxFlex="1%"></div>
+</section>

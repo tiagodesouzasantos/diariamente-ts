@@ -1,0 +1,14 @@
+{
+    "monitor_time":20,
+    "prefix_file":"Temperatura-",
+    "dir_log":"C:\\Users\\tiago.santos\\Desktop\\Labs\\diariamente-ts\\node\\temperatureSms\\temperature\\..\\files\\",
+    "send_msg":false,
+    "url_sms_msg":"https://mesagem.com/api/send/?text=substituaPorSuaAPI",
+    "check_last_temp":3,
+    "max_temperature":24.2,
+    "copy_file":false,
+    "shutdown_src": "\\\\buzios\\xampp\\htdocs\\teste.txt",
+    "shutdown_dst": "\\\\buzios\\xampp\\htdocs\\teste\\teste.txt",
+    "run_batch":false,
+    "url_batch":"\\\\buzios\\xampp\\htdocs\\teste\\teste.bat"
+}

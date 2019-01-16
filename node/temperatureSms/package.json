@@ -1,0 +1,19 @@
+{
+  "name": "temperaturesms",
+  "version": "1.0.0",
+  "description": "Projeto destinado a leitura de temperatura dos servidores e envio de sms caso temperatura alta",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "temperature",
+    "sms"
+  ],
+  "author": "Tiago Santos",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}

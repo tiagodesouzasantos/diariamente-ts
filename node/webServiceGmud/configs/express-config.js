@@ -1,0 +1,12 @@
+const express = require('express');
+const app = express();
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const angularApp = __dirname + "/../app/dist/gmud/";
+const apiRoutes = require('../api/v1/routes/apiRoutes');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+app.use(bodyParser.json());
+app.use(express.static(angularApp));
+apiRoutes(app);
+module.exports = app;

@@ -1,24 +1,20 @@
-var express = require('express'),
-    app = express(),
-    port = process.env.PORT || 3000,
-    bodyParser = require('body-parser');
+const express = require('express');
+const cors = require('cors');
+const app = express();
+const port = process.env.PORT || 3000;
+const bodyParser = require('body-parser');
+const angularApp = __dirname + "/app/dist/gmud/";
+const apiRoutes = require('./api/v1/routes/apiRoutes');
 
-app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static(angularApp));
 
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    next();
-});
-
-var batRoutes = require('./api/routes/batRoutes');
-var serverRoutes = require('./api/routes/serverRoutes');
-batRoutes(app);
-serverRoutes(app);
-
+apiRoutes(app);
 app.listen(port);
 
 console.log('Bat RESTful API server started on: ' + port);
+// https://api.bitbucket.org/2.0/repositories/tiago-santos-bandeiranteslog/paradisemicroledwms/
+//taskkill /f /im node.exe

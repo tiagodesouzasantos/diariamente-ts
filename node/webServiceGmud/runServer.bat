@@ -1,0 +1,1 @@
+cd C:/Users/tiago.santos/Desktop/Labs/diariamente-ts/node/webServiceGmud/ && nodemon
