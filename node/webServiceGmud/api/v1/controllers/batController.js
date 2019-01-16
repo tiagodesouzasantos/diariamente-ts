@@ -3,10 +3,6 @@ let bats = require('../plugins/runBatPlugin');
 let requests = require('../plugins/bats/batsPlugin');
 let logs = require('../plugins/file/logPlugin');
 
-// var path = require('path');
-// var nodegit = require('nodegit'),
-// repoFolder = path.resolve('\\\\camburi\\Microled\\Operador', 'https://tiago-santos-bandeiranteslog@bitbucket.org/sistemasbandeirantes/camburioperador.git');
-
 exports.runBatAction = function (req, res) {
     try {
         let postsVar = req.body;

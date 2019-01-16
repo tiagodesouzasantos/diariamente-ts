@@ -1,0 +1,56 @@
+2019-01-09 16:52:48 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\rdp-tiago\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\node\projetos\webServiceGmud\gmud-server.js --log "Gmude wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2019-01-09 16:52:49 - Started 8032
+2019-01-09 16:55:11 - Stopping gmude.exe
+2019-01-09 16:55:11 - ProcessKill 8032
+2019-01-09 16:55:12 - Found child process: 6864 Name: node.exe
+2019-01-09 16:55:12 - Stopping process 6864
+2019-01-09 16:55:12 - Send SIGINT 6864
+2019-01-09 16:55:12 - SIGINT to 6864 failed - Killing as fallback
+2019-01-09 16:55:12 - Stopping process 8032
+2019-01-09 16:55:12 - Send SIGINT 8032
+2019-01-09 16:55:12 - SIGINT to8032 successful
+2019-01-09 16:55:12 - Finished gmude.exe
+2019-01-09 16:55:20 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\rdp-tiago\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\node\projetos\webServiceGmud\gmud-server.js --log "Gmude wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2019-01-09 16:55:20 - Started 7148
+2019-01-10 17:15:16 - Stopping gmude.exe
+2019-01-10 17:15:16 - ProcessKill 7148
+2019-01-10 17:15:17 - Found child process: 5688 Name: node.exe
+2019-01-10 17:15:17 - Stopping process 5688
+2019-01-10 17:15:17 - Send SIGINT 5688
+2019-01-10 17:15:18 - SIGINT to 5688 failed - Killing as fallback
+2019-01-10 17:15:18 - Stopping process 7148
+2019-01-10 17:15:18 - Send SIGINT 7148
+2019-01-10 17:15:18 - SIGINT to7148 successful
+2019-01-10 17:15:18 - Finished gmude.exe
+2019-01-11 17:25:20 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\rdp-tiago\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\node\projetos\webServiceGmud\gmud-server.js --log "Gmude wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2019-01-11 17:25:20 - Started 7988
+2019-01-11 17:25:58 - Stopping gmude.exe
+2019-01-11 17:25:58 - ProcessKill 7988
+2019-01-11 17:25:58 - Found child process: 6656 Name: node.exe
+2019-01-11 17:25:59 - Stopping process 6656
+2019-01-11 17:25:59 - Send SIGINT 6656
+2019-01-11 17:25:59 - SIGINT to 6656 failed - Killing as fallback
+2019-01-11 17:25:59 - Stopping process 7988
+2019-01-11 17:25:59 - Send SIGINT 7988
+2019-01-11 17:25:59 - SIGINT to7988 successful
+2019-01-11 17:25:59 - Finished gmude.exe
+2019-01-11 17:26:00 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\rdp-tiago\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\node\projetos\webServiceGmud\gmud-server.js --log "Gmude wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2019-01-11 17:26:00 - Started 5860
+2019-01-11 17:27:37 - Stopping gmude.exe
+2019-01-11 17:27:37 - ProcessKill 5860
+2019-01-11 17:27:38 - Found child process: 4588 Name: node.exe
+2019-01-11 17:27:38 - Found child process: 6508 Name: cmd.exe
+2019-01-11 17:27:38 - Found child process: 6816 Name: taskkill.exe
+2019-01-11 17:27:38 - Stopping process 6816
+2019-01-11 17:27:38 - Send SIGINT 6816
+2019-01-11 17:28:08 - SIGINT to 6816 failed - Killing as fallback
+2019-01-11 17:28:08 - Stopping process 6508
+2019-01-11 17:28:08 - Send SIGINT 6508
+2019-01-11 17:28:08 - SIGINT to 6508 failed - Killing as fallback
+2019-01-11 17:28:08 - Stopping process 4588
+2019-01-11 17:28:08 - Send SIGINT 4588
+2019-01-11 17:28:08 - SIGINT to 4588 failed - Killing as fallback
+2019-01-11 17:28:08 - Stopping process 5860
+2019-01-11 17:28:08 - Send SIGINT 5860
+2019-01-11 17:28:08 - SIGINT to 5860 failed - Killing as fallback
+2019-01-11 17:28:08 - Finished gmude.exe
