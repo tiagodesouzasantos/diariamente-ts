@@ -1,0 +1,19 @@
+{
+  "name": "login_api",
+  "version": "1.0.0",
+  "description": "Modulo padrão para login",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "keywords": [
+    "login",
+    "jwt"
+  ],
+  "author": "Tiago Santos",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
