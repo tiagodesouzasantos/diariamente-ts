@@ -28,15 +28,15 @@ O arquivo está dentro da pasta do projeto em "**/config/config.json**"
 {
     "monitor_time":1,
     "prefix_file":"Temperatura-",
-    "dir_log":"\\\\TRANCOSO\\projetos\\temperatureSms\\files\\",
+    "dir_log":"\\\\SERVIDOR\\projetos\\temperatureSms\\files\\",
     "send_msg":false,
     "check_last_temp":2,
     "max_temperature":26.1,
     "copy_file":false,
-    "shutdown_src": "\\\\buzios\\xampp\\htdocs\\teste.txt",
-    "shutdown_dst": "\\\\buzios\\xampp\\htdocs\\teste\\teste.txt",
+    "shutdown_src": "\\\\SERVIDOR\\xampp\\htdocs\\teste.txt",
+    "shutdown_dst": "\\\\SERVIDOR\\xampp\\htdocs\\teste\\teste.txt",
     "run_batch":false,
-    "url_batch":"\\\\buzios\\xampp\\htdocs\\teste\\teste.bat"
+    "url_batch":"\\\\SERVIDOR\\xampp\\htdocs\\teste\\teste.bat"
 }
 ```
 **O que faz cada parametro**
@@ -71,4 +71,4 @@ Caso tenha qualquer problema com a instalação ou duvida, verifique com o desen
 -----
 @**package** HeatMonitor
 @**author** Tiago Santos
-@**copyright** Copyright (c) 2019, Bandeirantes Logistica Integrada
+@**copyright** Copyright (c) 2019, Dev.
