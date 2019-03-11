@@ -15,6 +15,6 @@ export class ServersService {
 	}
 
 	getServers() {
-		return this.http.get(this.baseUrl+'/api/servers',httpOptions);
+		return this.http.get(this.baseUrl+'api/servers',httpOptions);
 	}
 }

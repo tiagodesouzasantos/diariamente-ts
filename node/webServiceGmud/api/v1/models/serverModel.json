@@ -1,10 +1,17 @@
 [
     {
-        "server": "buzios",
+        "server": "buzios (Realizar configs)",
         "softwares": [
             {
                 "name": "KPI",
-                "update": "C:/node/projetos/webServiceGmud/libs/batches/buziosKpiBandSubProjPush.bat"
+                "dev":{
+                    "link_api":"http://trancoso:3001/api/update",
+                    "git":{
+                        "dir": "C:\\node\\projetos\\gerencial_git_teste",
+                        "dir_unit": "c:"
+                    }
+                },
+                "prod":{}
             }
         ]
     },
@@ -12,9 +19,42 @@
         "server": "camburi",
         "softwares": [
             {
-                "name": "Gerencial",
-                "update": "C:/node/projetos/webServiceGmud/libs/batches/camburiSGIPAGerencialPush.bat",
-                "updateHomolog": "C:/node/projetos/webServiceGmud/libs/batches/homologs/camburiSGIPAGerencialPush.bat"
+                "name": "Gerencial (Realizar configs)",  
+                "dev":{},
+                "prod":{
+                    "link_api":"http://trancoso:3001/api/update",
+                    "git":{
+                        "dir": "C:\\node\\projetos\\gerencial_git_teste",
+                        "dir_unit": "c:"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "server": "trancoso",
+        "softwares": [
+            {
+                "name": "Gerencial git gmud (Testando)",
+                "dev":{
+                    "link_api":"http://trancoso:3001/api/update",
+                    "git":{
+                        "dir": "C:\\node\\projetos\\gerencial_git_teste",
+                        "dir_unit": "c:"
+                    }
+                },
+                "prod":{}             
+            },
+            {
+                "name": "KPI",
+                "dev":{
+                    "link_api":"http://trancoso:3001/api/update",
+                    "git":{
+                        "dir": "C:\\xampp-php7\\htdocs",
+                        "dir_unit": "c:"
+                    }
+                },
+                "prod":{}             
             }
         ]
     }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BatsService } from '../services/bats.service';
 import { ServersService } from '../services/servers.service';
+import { SystemServerService } from '../services/system-server.service';
 
 @Component({
 	selector: 'gmud-list',
@@ -13,9 +14,18 @@ export class GmudListComponent implements OnInit {
 	step:number = 0;
 	listSoftwares = [];
 	spinner = { "color": 'primary', "mode": 'indeterminate' };
+	textFront = {
+		unConfigOption:"(Opção não configurada)",
+		development: "Desenvolvimento",
+		update: "Atualizar",
+		production:"Produção",
+		project:"Projeto",
+		action:"Ações",
+		msg:"Mensagens"
+	};
 
 	constructor(
-		private _batsService: BatsService, 
+		private _systemServerService: SystemServerService, 
 		private _serversService: ServersService){
 
 	}
@@ -28,8 +38,8 @@ export class GmudListComponent implements OnInit {
 		});
 	}  
 
-	updateSoftware(software){
-		let post = this._batsService.postBat(software);
+	updateSoftware(software,environment){
+		let post = this._systemServerService.update(software[environment].link_api, software[environment]);
 		software.updating = true;
 		post.subscribe((result:any[])=>{
 			software.updating = false;
@@ -38,7 +48,7 @@ export class GmudListComponent implements OnInit {
 		},error=>{
 			software.updating = false;
 			software.msg = error.error;
-			console.log(error);			
+			console.error(error);			
 		});		
 	}	
 

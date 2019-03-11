@@ -1,0 +1,30 @@
+{
+    "connections": {
+        "dev": {
+            "servers": {
+                "server_1": {
+                    "dbHost": "192.168.1.10",
+                    "dbUsername": "user",
+                    "dbPassword": "pass"
+                }
+            },
+            "db_name": {
+                "serverName": "server_1",
+                "dbname": "DB_NAME"
+            }
+        },
+        "prod": {
+            "servers": {
+                "server_2": {
+                    "dbHost": "192.168.1.11",
+                    "dbUsername": "user",
+                    "dbPassword": "pass"
+                }
+            },
+            "db_name_2": {
+                "serverName": "server_2",
+                "dbname": "DB_NAME_2"
+            }
+        }
+    }
+}

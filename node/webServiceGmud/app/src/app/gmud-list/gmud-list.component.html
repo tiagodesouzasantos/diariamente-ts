@@ -17,18 +17,27 @@
 				<section class="content">
 					<mat-list dense fxFlex="100%">
 						<mat-list-item class="item-list-title">
-							<span fxFlex="30%">Projeto</span>
-							<span fxFlex="10%">Ações</span>
-							<span fxFlex="30%">Mensagens</span>
+							<span fxFlex="30%">{{textFront.project}}</span>
+							<span fxFlex="10%">{{textFront.action}}</span>
+							<span fxFlex="30%">{{textFront.msg}}</span>
 						</mat-list-item>
 						<mat-list-item *ngFor="let software of server.softwares" class="list-item">
 							<span fxFlex="30%">{{software.name}}</span>
-							<div fxFlex="10%">
-								<button fxLayoutAlign="start" mat-icon-button (click)="updateSoftware(software)" color="primary" matTooltip="Atualizar {{software.name}}">
+							<div fxFlex="10%" fxLayout="row">
+								<button *ngIf="software['prod']" fxLayoutAlign="center" mat-icon-button (click)="updateSoftware(software,'prod')" color="primary" matTooltip="{{textFront.update}} {{software.name}} | {{textFront.production}}">
+									<mat-icon aria-label="Update System">update</mat-icon>
+								</button>
+								<button *ngIf="!software['prod']" fxLayoutAlign="center" mat-icon-button color="#dedede" matTooltip="{{textFront.update}} {{software.name}} | {{textFront.production}} {{textFront.unConfigOption}}">
+									<mat-icon aria-label="Update System">update</mat-icon>
+								</button>
+								<button *ngIf="software['dev']" fxLayoutAlign="center" mat-icon-button (click)="updateSoftware(software,'dev')" color="primary" matTooltip="{{textFront.update}} {{software.name}} | {{textFront.development}}">
+									<mat-icon aria-label="Update System">update</mat-icon>
+								</button>
+								<button *ngIf="!software['dev']" fxLayoutAlign="center" mat-icon-button color="#dedede" matTooltip="{{textFront.update}} {{software.name}} | Desenvolvimento {{textFront.unConfigOption}}">
 									<mat-icon aria-label="Update System">update</mat-icon>
 								</button>
 							</div>
-							<div fxFlex="50%" fxLayout="row">
+							<div fxFlex="50%" fxLayout="row">								
 								<mat-progress-spinner fxLayoutAlign="center" diameter="21" *ngIf="software?.updating" fxLayoutAlign="center" [color]="spinner.color" [mode]="spinner.mode"></mat-progress-spinner>
 								<span fxLayoutAlign="start" *ngIf="software?.msg && !software?.updating">{{software.msg}}</span>
 							</div>

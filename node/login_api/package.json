@@ -4,7 +4,8 @@
   "description": "Modulo padrão para login",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon index.js"
+    "test": "nodemon index.js",
+    "dev":"nodemon index.js"
   },
   "keywords": [
     "login",
@@ -13,7 +14,11 @@
   "author": "Tiago Santos",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "consign": "^0.1.6",
+    "express": "^4.16.4",
+    "sequelize": "^4.42.0",
+    "tedious": "^4.1.3"
   }
 }
